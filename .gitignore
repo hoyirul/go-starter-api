@@ -1,0 +1,23 @@
+# File build dan binary
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+# Direktori build
+build/
+bin/
+
+# File konfigurasi
+*.env
+
+# File log
+*.log
+
+# Direktori vendor dari depedency manajemen
+vendor/
+
+# File editor konfigurasi
+.idea/
+.vscode/
