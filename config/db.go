@@ -2,6 +2,7 @@ package config
 
 import (
 	"fmt"
+	"log"
 	"os"
 
 	"github.com/joho/godotenv"
@@ -39,4 +40,10 @@ func InitDB() error {
 
 	DB = db
 	return nil
+}
+
+func ConnectDB() {
+	if err := InitDB(); err != nil {
+		log.Fatalf("Failed to connect to database: %v", err)
+	}
 }

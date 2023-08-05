@@ -2,32 +2,41 @@ package main
 
 import (
 	"fmt"
-	"log"
+	"os"
 
 	"github.com/gin-gonic/gin"
+	"github.com/hoyirul/go-starter-api/commands"
 	"github.com/hoyirul/go-starter-api/config"
-	"github.com/hoyirul/go-starter-api/models"
 	"github.com/hoyirul/go-starter-api/routes"
 )
 
 func main() {
-	fmt.Println("Starting Go API Server...")
 
-	// Inisialisasi koneksi ke database MySQL
-	if err := config.InitDB(); err != nil {
-		log.Fatalf("Failed to connect to database: %v", err)
+	if len(os.Args) < 2 {
+		fmt.Println("Usage: go run main.go [function]")
+		return
 	}
 
-	// Migrate tabel user dan product
-	config.DB.AutoMigrate(&models.User{}, &models.Product{})
+	functionToRun := os.Args[1]
 
-	// Inisialisasi router Gin
-	router := gin.Default()
+	switch functionToRun {
+	case "db:seed":
+		commands.SeedDB()
+	case "migrate":
+		commands.MigrateDB()
+	case "serve":
+		config.ConnectDB()
+		fmt.Println("Starting Go API Server...")
+		// Inisialisasi router Gin
+		// router := gin.Default()
+		router := gin.New()
 
-	// Setup rute untuk pengguna (user) dan produk (product)
-	routes.SetupUserRoutes(router)
-	routes.SetupProductRoutes(router)
+		// Setup rute untuk pengguna (user) dan produk (product)
+		routes.SetupRoutes(router)
 
-	// Jalankan server
-	router.Run(":8080")
+		// Jalankan server
+		router.Run(":8080")
+	default:
+		fmt.Println("Function not found.")
+	}
 }
