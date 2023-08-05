@@ -10,6 +10,8 @@ import (
 	"github.com/hoyirul/go-starter-api/routes"
 )
 
+var clearTokens = make(map[string]bool)
+
 func main() {
 	if len(os.Args) < 2 {
 		fmt.Println("Usage: go run main.go [function]")
