@@ -69,7 +69,7 @@ func UpdateUser(c *gin.Context) {
 	}
 
 	user.Username = updatedUser.Username
-	user.Email = updatedUser.Email
+	user.Password = updatedUser.Password
 
 	config.DB.Save(&user)
 

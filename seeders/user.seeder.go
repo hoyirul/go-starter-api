@@ -18,8 +18,8 @@ func (s UserSeeder) Run() error {
 
 	// Data produk yang akan di-seed
 	users := []models.User{
-		{Username: "admin", Email: "admin@gmail.com"},
-		{Username: "user", Email: "user@gmail.com"},
+		{Username: "admin", Password: "password"},
+		{Username: "user", Password: "password"},
 		// Tambahkan data produk lainnya sesuai kebutuhan
 	}
 
