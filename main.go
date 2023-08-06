@@ -45,10 +45,11 @@ func main() {
 			ginMode := os.Getenv("GIN_MODE")
 			if ginMode == "development" {
 				ginMode = gin.DebugMode
+			} else if ginMode == "release" {
+				gin.SetMode(gin.ReleaseMode)
+			} else {
+				log.Fatalf("Invalid GIN_MODE value: %s. Should be 'release' or empty.", ginMode)
 			}
-
-			// Set mode Gin
-			gin.SetMode(ginMode)
 
 			// Inisialisasi router Gin
 			// router := gin.Default()
