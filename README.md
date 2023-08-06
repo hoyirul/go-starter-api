@@ -21,7 +21,11 @@ Go Starter API adalah proyek awal (starter) untuk membuat RESTful API menggunaka
 
 ## Penggunaan
 
-1. Buat file .env dan konfigurasikan koneksi ke database MySQL:
+1. Jalankan `cp .env.example .env`
+
+2. Jalankan key:generate untuk membuat SECRET_KEY: `go run main.go key:generate`
+
+3. Buat file .env dan konfigurasikan koneksi ke database MySQL:
     - DB_USER=username
     - DB_PASS=password
     - DB_HOST=localhost
@@ -29,15 +33,13 @@ Go Starter API adalah proyek awal (starter) untuk membuat RESTful API menggunaka
     - DB_NAME=database_name
     - SECRET_KEY=your_secret_key
 
-2. Jalankan key:generate untuk membuat SECRET_KEY: `go run main.go key:generate`
+4. Jalankan migrasi untuk membuat tabel pada database: `go run main.go migrate`
 
-3. Jalankan migrasi untuk membuat tabel pada database: `go run main.go migrate`
+5. Jalankan seed untuk menambahkan data awal ke database: `go run main.go db:seed`
 
-4. Jalankan seed untuk menambahkan data awal ke database: `go run main.go db:seed`
+6. Jalankan serve untuk menjalankan aplikasi: `go run main.go serve`
 
-5. Jalankan serve untuk menjalankan aplikasi: `go run main.go serve`
-
-6. Proyek ini akan dijalankan pada http://localhost:8080
+7. Proyek ini akan dijalankan pada http://localhost:8080
 
 ## Endpoint API
 
