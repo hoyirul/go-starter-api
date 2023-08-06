@@ -73,4 +73,7 @@ Jika Anda ingin berkontribusi pada proyek ini, silakan fork proyek ini dan buat 
 
 Mochammad Hairullah
 
-<!-- Proyek ini dilisensikan di bawah [MIT License](LICENSE). -->
+
+## Lisensi
+
+Proyek ini dilisensikan di bawah [MIT License](LICENSE).
