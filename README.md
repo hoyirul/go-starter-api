@@ -55,13 +55,13 @@ Go Starter API adalah proyek awal (starter) untuk membuat RESTful API menggunaka
 - `PUT /api/products/:id` - Mengupdate produk berdasarkan ID
 - `DELETE /api/products/:id` - Menghapus produk berdasarkan ID
 
-### Produk (User)
+### User (User)
 
-- `GET /api/users` - Mendapatkan daftar produk
-- `GET /api/users/:id` - Mendapatkan detail produk berdasarkan ID
-- `POST /api/users` - Menambahkan produk baru
-- `PUT /api/users/:id` - Mengupdate produk berdasarkan ID
-- `DELETE /api/users/:id` - Menghapus produk berdasarkan ID
+- `GET /api/users` - Mendapatkan daftar user
+- `GET /api/users/:id` - Mendapatkan detail user berdasarkan ID
+- `POST /api/users` - Menambahkan user baru
+- `PUT /api/users/:id` - Mengupdate user berdasarkan ID
+- `DELETE /api/users/:id` - Menghapus user berdasarkan ID
 
 ## Kontribusi
 
