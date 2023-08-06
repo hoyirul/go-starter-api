@@ -43,9 +43,9 @@ Go Starter API adalah proyek awal (starter) untuk membuat RESTful API menggunaka
 
 ### Auth (User)
 
-- `POST /api/register` - Registrasi pengguna baru
-- `POST /api/login` - Login pengguna
-- `POST /api/logout` - Logout pengguna
+- `POST /api/auth/register` - Registrasi pengguna baru
+- `POST /api/auth/login` - Login pengguna
+- `POST /api/auth/logout` - Logout pengguna
 
 ### Produk (Product)
 
